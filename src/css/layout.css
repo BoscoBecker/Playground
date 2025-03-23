@@ -1,0 +1,661 @@
+:root {
+            --sidebar-width: 250px;
+        }
+        body {
+            background-color: #f8f9fa;
+            
+        }
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background: #2c3e50;
+            padding: 20px;
+            color: white;
+        }
+        .main-content {
+            margin-left: 0;
+            padding: 20px;
+            width: 100%;
+
+            
+                }
+        .tool-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.8s;
+        }
+
+    .tool-card::after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        background: #2d2d2d;
+        z-index: -1;
+        transition: all 0.0s ease;
+    }
+
+    .tool-card:hover::after {
+        background: linear-gradient(60deg, #3b82f6, #8b5cf6, #ec4899, #3b82f6);
+        background-size: 200% 200%;
+        animation: gradient-animation 8s linear infinite;
+        opacity: 0.1;
+    }
+        
+        .language-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #dc3545;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .status-dot.active {
+            background-color: #28a745;
+        }
+        .play-button {
+            transition: all 0.3s ease;
+        }
+        .play-button.active {
+            background-color: #28a745 !important;
+            color: white !important;
+            border-color: #28a745 !important;
+        }
+        .play-button.active {
+            background-color: #28a745 !important;
+            color: white !important;
+        }      
+        .list-group-item {
+            background: transparent;
+            padding: 0.5rem 0;
+        }
+        .list-group-item:not(:last-child) {
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        .fw-medium {
+            font-weight: 500;
+        }          
+
+        /* Ajustes para responsividade */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 10px;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 10px;
+            }
+            .tool-card {
+                height: auto;
+                padding: 15px !important;
+                margin-bottom: 15px;
+            }
+            .input-group {
+                gap: 5px;
+            }
+            .input-group > .form-control {
+                min-height: 38px;
+            }
+            .input-group .btn {
+                height: 38px;
+                padding: 6px 12px;
+            }
+        }
+
+        /* Ajustes para telas muito pequenas */
+        @media (max-width: 576px) {
+            .input-group {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .input-group > * {
+                width: 100% !important;
+                margin: 0 !important;
+                border-radius: 4px !important;
+                min-height: 38px;
+            }
+            .form-select {
+                width: 100% !important;
+            }
+            .tool-card {
+                padding: 12px !important;
+            }
+        }   
+  
+        /* Add these styles before the media queries */
+        .tool-card {
+            /* ... existing styles ... */
+            position: relative;
+            z-index: 1;
+        }
+
+        .tool-card::before {
+            /* ... existing styles ... */
+            z-index: -1;
+        }
+
+        /* Add these styles for better button interaction */
+        .btn, .nav-link, a {
+            position: relative;
+            z-index: 2;
+        }
+
+        .input-group {
+            position: relative;
+            z-index: 2;
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            border-radius: 10px;
+            padding: 1px;
+            background: linear-gradient(
+                60deg,
+                #3b82f6,
+                #8b5cf6,
+                #ec4899
+            );
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .tool-card:hover::before {
+            opacity: 1;
+            background: linear-gradient(
+                60deg,
+                #3b82f6,
+                #8b5cf6,
+                #ec4899,
+                #3b82f6
+            );
+            background-size: 200% 200%;
+            animation: gradient-animation 3s linear infinite;
+        }
+
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }     
+        
+        /* Add these dark theme styles before the media queries */
+        /* Dark theme styles with lighter colors */
+                :root {
+                    --dark-bg: #242424;
+                    --dark-card: #2f2f2f;
+                    --dark-text: #f0f0f0;
+                    --dark-border: rgba(255, 255, 255, 0.15);
+                    --dark-input: #363636;
+                }
+
+                body {
+                    background-color: var(--dark-bg);
+                    color: var(--dark-text);
+                }
+
+                .sidebar {
+                    background: var(--dark-card);
+                }
+
+                .tool-card {
+                    background: var(--dark-card);
+                    color: var(--dark-text);
+                    border: 1px solid var(--dark-border);
+                }
+
+                .form-control, .form-select {
+                    background-color: var(--dark-input);
+                    border-color: var(--dark-border);
+                    color: var(--dark-text);
+                }
+
+                .form-control:focus, .form-select:focus {
+                    background-color: var(--dark-input);
+                    border-color: var(--dark-border);
+                    color: var(--dark-text);
+                }
+
+                .list-group-item {
+                    background-color: transparent;
+                    color: var(--dark-text);
+                    border-color: var(--dark-border);
+                }
+
+                .text-muted {
+                    color: #b0b0b0 !important;
+                }
+        .status-dot.active {
+            background-color: #28a745;
+        }
+        .play-button {
+            transition: all 0.3s ease;
+        }
+        .play-button.active {
+            background-color: #28a745 !important;
+            color: white !important;
+            border-color: #28a745 !important;
+        }
+        .play-button.active {
+            background-color: #28a745 !important;
+            color: white !important;
+        }      
+        .list-group-item {
+            background: transparent;
+            padding: 0.5rem 0;
+        }
+        .list-group-item:not(:last-child) {
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        .fw-medium {
+            font-weight: 500;
+        }          
+
+        /* Ajustes para responsividade */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 10px;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 10px;
+            }
+            .tool-card {
+                height: auto;
+                padding: 15px !important;
+                margin-bottom: 15px;
+            }
+            .input-group {
+                gap: 5px;
+            }
+            .input-group > .form-control {
+                min-height: 38px;
+            }
+            .input-group .btn {
+                height: 38px;
+                padding: 6px 12px;
+            }
+        }
+
+        /* Ajustes para telas muito pequenas */
+        @media (max-width: 576px) {
+            .input-group {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .input-group > * {
+                width: 100% !important;
+                margin: 0 !important;
+                border-radius: 4px !important;
+                min-height: 38px;
+            }
+            .form-select {
+                width: 100% !important;
+            }
+            .tool-card {
+                padding: 12px !important;
+            }
+        }     
+        /* Add these styles before the media queries */
+        .tool-card {
+            /* ... existing styles ... */
+            position: relative;
+            z-index: 1;
+        }
+
+        .tool-card::before {
+            /* ... existing styles ... */
+            z-index: -1;
+        }
+
+        /* Add these styles for better button interaction */
+        .btn, .nav-link, a {
+            position: relative;
+            z-index: 2;
+        }
+
+        .input-group {
+            position: relative;
+            z-index: 2;
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            border-radius: 10px;
+            padding: 1px;
+            background: linear-gradient(
+                60deg,
+                #3b82f6,
+                #8b5cf6,
+                #ec4899
+            );
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .tool-card:hover::before {
+            opacity: 1;
+            background: linear-gradient(
+                60deg,
+                #3b82f6,
+                #8b5cf6,
+                #ec4899,
+                #3b82f6
+            );
+            background-size: 200% 200%;
+            animation: gradient-animation 3s linear infinite;
+        }
+
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }     
+        
+        /* Add these dark theme styles before the media queries */
+        body {
+            background-color: #1a1a1a;
+            color: #e4e4e4;
+        }
+
+        .sidebar {
+            background: #2c2c2c;
+        }
+
+        .tool-card {
+            background: #2d2d2d;
+            color: #e4e4e4;
+        }
+        .form-control::placeholder,
+        .form-select::placeholder {
+            color: rgba(255, 255, 255, 0.7) !important;
+            opacity: 1;
+        }
+        
+        .form-control::-webkit-input-placeholder {
+            color: rgba(255, 255, 255, 0.7) !important;
+            opacity: 1;
+        }
+        
+        .form-control::-moz-placeholder {
+            color: rgba(255, 255, 255, 0.7) !important;
+            opacity: 1;
+        }
+        
+        .form-control:-ms-input-placeholder {
+            color: rgba(255, 255, 255, 0.7) !important;
+            opacity: 1;
+        }
+        .list-group-item {
+            background-color: transparent;
+            color: #e4e4e4;
+            border-color: rgba(255,255,255,0.1);
+        }
+
+        .text-muted {
+            color: #999 !important;
+        }
+
+        a.text-decoration-none {
+            color: #3b82f6;
+        }
+
+        a.text-decoration-none:hover {
+            color: #60a5fa;
+        }
+
+        .badge {
+            opacity: 0.9;
+        }
+
+        .btn-outline-primary {
+            border-color: #3b82f6;
+            color: #3b82f6;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #3b82f6;
+            color: #fff;
+        }
+
+        .btn-outline-secondary {
+            border-color: #666;
+            color: #e4e4e4;
+        }
+
+        .btn-outline-secondary:hover {
+            background-color: #666;
+            color: #fff;
+        }        
+        
+        #cookie-consent .tool-card {
+    margin-bottom: 0;
+    background: rgba(45, 45, 45, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    #cookie-consent .btn {
+        margin-top: 10px;
+        width: auto;
+        padding: 8px 16px;
+    }
+    
+    #cookie-consent .text-end {
+        text-align: center !important;
+        margin-top: 15px;
+    }
+}
+
+        h2.mb-4 {
+            background: linear-gradient(60deg, #3b82f6, #8b5cf6, #ec4899);
+            background: linear-gradient(60deg, #3b82f6, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+            display: block;
+            text-align: center;
+            width: 100%;                    
+        }
+
+        /* Add these styles for consistent card sizes */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .row > [class*='col-'] {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tool-card {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tool-card > .mt-3 {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tool-card ul.list-unstyled {
+            flex-grow: 1;
+        }
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #ffffff !important;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    z-index: 9999;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    color: #ffffff !important;
+    text-decoration: none;
+}
+
+.whatsapp-float i {
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        bottom: 20px;
+        right: 20px;
+    }
+}        
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-card);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        60deg,
+        #3b82f6,
+        #8b5cf6,
+        #ec4899
+    );
+    border-radius: 6px;
+    border: 3px solid var(--dark-card);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+        60deg,
+        #3b82f6,
+        #8b5cf6,
+        #ec4899,
+        #3b82f6
+    );
+    background-size: 200% 200%;
+    animation: gradient-animation 3s linear infinite;
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #8b5cf6 var(--dark-card);
+}
+.qr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.qr-container img {
+    max-width: 200px;
+    border-radius: 10px;
+}
+
+.countdown-timer {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(60deg, #3b82f6, #8b5cf6, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-animation 3s linear infinite;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+#qrResult img {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+.progress {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    background: linear-gradient(60deg, #3b82f6, #8b5cf6, #ec4899);
+    background-size: 200% 200%;
+    animation: gradient-animation 3s linear infinite;
+    height: 100%;
+    transition: width 0.1s linear;
+}

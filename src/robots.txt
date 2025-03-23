@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /default.php
+Allow: /privacy.php
+Allow: /TermUse.php
+
+# Prevent access to system files and directories
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /admin/
+Disallow: /*.sql$
+Disallow: /*.config$
+Disallow: /*.log$
+
+# Specify the sitemap location
+Sitemap: https://boscobecker.fun/sitemap.xml
+
+# Crawl-delay for all bots
+Crawl-delay: 10
