@@ -83,4 +83,4 @@ João Bosco dos Reis Becker (Bosco Becker)
 - [Open Bug Bounty](https://www.openbugbounty.org/researchers/BoscoBecker/)
 
 ## 📄 License
-© 2024 Bosco Becker. All rights reserved.
+© 2025 Bosco Becker. All rights reserved.
