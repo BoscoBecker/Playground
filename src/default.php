@@ -30,7 +30,9 @@
             'entertainment_title' => 'Entertainment Hub',
             'entertainment_description' => 'Your favorite streaming and sports content',
             'watch_now' => 'Watch Now',
-            'visit_now' => 'Visit Now'              
+            'visit_now' => 'Visit Now',
+            'whatsapp_info' => 'Enter the number below'
+
             
         ],
         'pt' => [
@@ -60,7 +62,9 @@
             'entertainment_title' => 'Central de Entretenimento',
             'entertainment_description' => 'Seu conteúdo favorito de streaming e esportes',
             'watch_now' => 'Assistir Agora',
-            'visit_now' => 'Visitar Agora'        
+            'visit_now' => 'Visitar Agora',
+            'whatsapp_info' => 'Informe o número abaixo',
+
         ]
     ];
  ?>
@@ -203,7 +207,7 @@
                     <div class="tool-card p-4">
                         <h5><i class="fab fa-whatsapp"></i> WhatsApp</h5>
                         <div class="mt-3">
-                            <p> Informe o número abaixo</p> <br>
+                            <p><?php echo $translations[$lang]['whatsapp_info']; ?></p> <br>
                             <div class="input-group mb-3">
                             <input type="tel" id="whatsapp-number" class="form-control" 
                                        placeholder="Ex: 5511999999999" 
