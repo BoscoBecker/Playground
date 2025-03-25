@@ -84,8 +84,8 @@
     gtag('config', 'G-LBCKW5PL4L');
  </script>    
  <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
- <title>Online Tools, development, Air Traffic Audio, Delphi & .NET Resources - For fun</title>    
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+ <title>Ferramentas\Online Tools, software development, IA, Air Traffic Audio, Delphi & .NET Resources - For fun</title>    
  <!-- SEO Meta Tags -->
  <meta name="description" content="Free online tools including CPF/CNPJ generator, password generator, live air traffic control audio, Delphi and .NET development resources. Brazilian developer tools and utilities.">
  <meta name="keywords" content="cpf generator, cnpj generator, gerador de cpf, gerador de cnpj, air traffic control, escuta aérea, delphi tools, .NET resources, password generator, brazilian developer tools">
@@ -96,13 +96,7 @@
  <meta property="og:url" content="https://boscobecker.fun/">
  <meta property="og:title" content="Online Tools: CPF/CNPJ Generator & Developer Resources">
  <meta property="og:description" content="Free online tools including CPF/CNPJ generator, password generator, live air traffic control audio, Delphi and .NET development resources.">
- <meta property="og:image" content="https://boscobecker.fun/assets/og-image.jpg">
- <!-- Twitter -->
- <meta property="twitter:card" content="summary_large_image">
- <meta property="twitter:url" content="https://boscobecker.fun/">
- <meta property="twitter:title" content="Online Tools: CPF/CNPJ Generator & Developer Resources">
- <meta property="twitter:description" content="Free online tools including CPF/CNPJ generator, password generator, live air traffic control audio, Delphi and .NET development resources.">
- <meta property="twitter:image" content="https://boscobecker.fun/assets/og-image.jpg">
+ <meta property="og:image" content="https://boscobecker.fun">
  <meta name="description" content="João Bosco dos Reis Becker - Software Developer specializing in Delphi, .NET, PHP, and Security Research. Known as Bosco Becker (@boscobecker)">
  <meta name="keywords" content="João Bosco, Bosco Becker, boscobecker, @boscobecker, software developer, security researcher, Delphi expert, .NET developer">
  <meta name="author" content="João Bosco dos Reis Becker">    
@@ -111,11 +105,6 @@
  <meta property="og:description" content="Professional portfolio of João Bosco (Bosco Becker) - Software Developer and Security Researcher">
  <meta property="og:image" content="assets/profile.jpg">
  <meta property="og:url" content="https://yourdomain.com">    
- <!-- Twitter Card Meta Tags -->
- <meta name="twitter:card" content="summary_large_image">
- <meta name="twitter:title" content="João Bosco dos Reis Becker (@boscobecker)">
- <meta name="twitter:description" content="Software Developer specializing in Delphi, .NET, PHP, and Security Research">
- <meta name="twitter:image" content="assets/profile.jpg">
  <!-- Entertainment-specific meta tags -->
  <meta name="keywords" content="streaming services, Netflix, Disney+, YouTube, Mercado Play, Multicanais, entertainment hub, online streaming, watch movies, TV shows, sports streaming, Brazilian entertainment">
  <meta name="description" content="Access your favorite streaming services including Netflix, Disney+, YouTube, and live sports. Watch movies, TV shows, and sports events all in one place.">   
@@ -123,10 +112,6 @@
  <meta property="og:title" content="Entertainment Hub - Stream Movies, TV Shows & Sports">
  <meta property="og:description" content="Your one-stop destination for streaming entertainment. Watch Netflix, Disney+, YouTube, and live sports.">
  <meta property="og:type" content="website">    
- <!-- Twitter Card tags -->
- <meta name="twitter:card" content="summary_large_image">
- <meta name="twitter:title" content="Entertainment Hub - Stream Movies, TV Shows & Sports">
- <meta name="twitter:description" content="Access Netflix, Disney+, YouTube, and live sports streaming all in one place.">
 
  <!-- SEO Meta Tags for AI Tools -->
 <meta name="description" content="Explore top AI tools including ChatGPT, DeepArt, Sesame, Grammarly, Canva, and invideo AI. Enhance your productivity with AI-powered solutions.">
@@ -135,9 +120,6 @@
 <meta property="og:description" content="Discover AI tools like ChatGPT, DeepArt, Sesame, Grammarly, Canva, and invideo AI. Boost your creativity and productivity with AI.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://boscobecker.fun/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Top AI Tools - Enhance Your Productivity with AI">
-<meta name="twitter:description" content="Explore AI tools like ChatGPT, DeepArt, Sesame, Grammarly, Canva, and invideo AI. Boost your creativity and productivity with AI.">
 
  <!-- Language Alternatives -->
  <link rel="alternate" hreflang="en" href="https://boscobecker.fun/?lang=en">
@@ -385,7 +367,7 @@
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="tool-card p-4">
-                        <img src="assets/netflix-logo.png" alt="Netflix" class="img-fluid mb-3" style="height: 60px; object-fit: contain;">
+                        <img src="assets/netflix-logo.png" alt="Netflix" class="img-fluid mb-3" style="height: 60px; object-fit: contain;" loading="lazy">
                         <h5>Netflix</h5>
                         <p class="text-muted">Stream your favorite movies and TV shows</p>
                         <a href="https://netflix.com" target="_blank" class="btn btn-danger w-100">
@@ -395,7 +377,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="tool-card p-4">
-                        <img src="assets/disney-plus-logo.png" alt="Disney+" class="img-fluid mb-3" style="height: 60px; object-fit: contain;">
+                        <img src="assets/disney-plus-logo.png" alt="Disney+" class="img-fluid mb-3" style="height: 60px; object-fit: contain;" loading="lazy">
                         <h5>Disney+</h5>
                         <p class="text-muted">Endless entertainment from Disney, Pixar, Marvel, Star Wars and more</p>
                         <a href="https://disneyplus.com" target="_blank" class="btn btn-primary w-100">
@@ -405,7 +387,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="tool-card p-4">
-                        <img src="assets/youtube-logo.png" alt="YouTube" class="img-fluid mb-3" style="height: 60px; object-fit: contain;">
+                        <img src="assets/youtube-logo.png" alt="YouTube" class="img-fluid mb-3" style="height: 60px; object-fit: contain;" loading="lazy">
                         <h5>YouTube</h5>
                         <p class="text-muted">Watch, share and create videos</p>
                         <a href="https://youtube.com" target="_blank" class="btn btn-danger w-100">
@@ -415,7 +397,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="tool-card p-4">
-                        <img src="assets/mercado-livre-logo.png" alt="Mercado Livre" class="img-fluid mb-3" style="height: 60px; object-fit: contain;">
+                        <img src="assets/mercado-livre-logo.png" alt="Mercado Livre" class="img-fluid mb-3" style="height: 60px; object-fit: contain;"  loading="lazy">
                         <h5>Mercado Play</h5>
                         <p class="text-muted">The largest e-commerce ecosystem in Latin America</p>
                         <a href="https://play.mercadolivre.com.br/?origin=navigation_menu_web#nav-header" target="_blank" class="btn btn-warning w-100">
@@ -425,7 +407,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="tool-card p-4">
-                        <img src="assets/multicanais-logo.png" alt="Multicanais" class="img-fluid mb-3" style="height: 60px; object-fit: contain;">
+                        <img src="assets/multicanais-logo.png" alt="Multicanais" class="img-fluid mb-3" style="height: 60px; object-fit: contain;" loading="lazy">
                         <h5>Multicanais</h5>
                         <p class="text-muted">Watch live sports and matches</p>
                         <a href="https://multicanais.bi" target="_blank" class="btn btn-success w-100">
@@ -435,7 +417,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="tool-card p-4">
-                        <img src="assets/youtube-logo.png" alt="YouTube" class="img-fluid mb-3" style="height: 60px; object-fit: contain;">
+                        <img src="assets/youtube-logo.png" alt="YouTube" class="img-fluid mb-3" style="height: 60px; object-fit: contain;" loading="lazy">
                         <h5><?php echo $lang == 'pt' ? 'Pesquisar e ir para o YouTube' : 'Search and go to YouTube'; ?></h5>
                         <div class="input-group mb-3">
                             <input type="text" id="youtube-search" class="form-control" 
@@ -454,7 +436,7 @@
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="tool-card p-4">
-                       <img src="assets/chatgpt-logo.png" alt="chatgpt" class="img-fluid mb-3" style="height: 60px; object-fit: contain;">
+                       <img src="assets/chatgpt-logo.png" alt="chatgpt" class="img-fluid mb-3" style="height: 60px; object-fit: contain;"loading="lazy">
                         <h5>ChatGPT</h5>
                         <p class="text-muted"><?php echo $lang == 'pt' ? 'Ferramenta de geração de texto' : 'Text generation tool'; ?></p>
                         <a href="https://chat.openai.com" target="_blank" class="btn btn-primary w-100">
@@ -464,7 +446,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="tool-card p-4">
-                       <img src="assets/deeparteffects-logo.png" alt="deeparteffects" class="img-fluid mb-3" style="height: 60px; object-fit: contain;">
+                       <img src="assets/deeparteffects-logo.png" alt="deeparteffects" class="img-fluid mb-3" style="height: 60px; object-fit: contain;"loading="lazy">
                         <h5>DeepArt</h5>
                         <p class="text-muted"><?php echo $lang == 'pt' ? 'Transforme fotos em arte' : 'Turn photos into art'; ?></p>
                         <a href="https://www.deeparteffects.com/" target="_blank" class="btn btn-primary w-100">
@@ -474,7 +456,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="tool-card p-4">
-                    <img src="assets/sesame-logo.png" alt="sesame" class="img-fluid mb-3" style="height: 60px; object-fit: contain;">
+                    <img src="assets/sesame-logo.png" alt="sesame" class="img-fluid mb-3" style="height: 60px; object-fit: contain;"loading="lazy">
                         <h5>Sesame</h5>
                         <p class="text-muted"><?php echo $lang == 'pt' ? 'Demonstração de voz via conversa' : 'Conversational voice demo'; ?></p>
                         <a href="https://www.sesame.com" target="_blank" class="btn btn-primary w-100">
@@ -484,7 +466,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="tool-card p-4">
-                        <img src="assets/Grammarly-logo.png" alt="Grammarly" class="img-fluid mb-3" style="height: 60px; object-fit: contain;">
+                        <img src="assets/Grammarly-logo.png" alt="Grammarly" class="img-fluid mb-3" style="height: 60px; object-fit: contain;"loading="lazy">
                         <h5>Grammarly</h5>
                         <p class="text-muted"><?php echo $lang == 'pt' ? 'Assistente de escrita' : 'Writing assistant'; ?></p>
                         <a href="https://www.grammarly.com" target="_blank" class="btn btn-primary w-100">
@@ -494,7 +476,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="tool-card p-4">
-                        <img src="assets/Canva-logo.png" alt="Canva" class="img-fluid mb-3" style="height: 60px; object-fit: contain;">
+                        <img src="assets/Canva-logo.png" alt="Canva" class="img-fluid mb-3" style="height: 60px; object-fit: contain;"loading="lazy">
                         <h5>Canva</h5>
                         <p class="text-muted"><?php echo $lang == 'pt' ? 'Ferramenta de design gráfico' : 'Graphic design tool'; ?></p>
                         <a href="https://www.canva.com" target="_blank" class="btn btn-primary w-100">
@@ -504,7 +486,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="tool-card p-4">
-                        <img src="assets/invideoIA-logo.png" alt="invideoIA" class="img-fluid mb-3" style="height: 60px; object-fit: contain;"> 
+                        <img src="assets/invideoIA-logo.png" alt="invideoIA" class="img-fluid mb-3" style="height: 60px; object-fit: contain;"loading="lazy"> 
                         <h5>invideo AI</h5>
                         <p class="text-muted"><?php echo $lang == 'pt' ? 'Gere videos com IA' : 'Generate video with IA'; ?></p>
                         <a href="https://invideo.io/pt/criar/ai-video-generator/" target="_blank" class="btn btn-primary w-100">
@@ -729,10 +711,9 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/site.js"></script>
-    <script type="application/ld+json">
+    <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script async src="js/site.js"></script>
+    <script async type="application/ld+json">
                 {"@context": "http://schema.org",
                     "@type": "Person",
                     "name": "João Bosco dos Reis Becker",
@@ -746,7 +727,7 @@
                         "https://stackoverflow.com/users/7370185/joao-bosco-dos-reis-becker"
                 ],"knowsAbout": ["Delphi", ".NET", "PHP", "JavaScript", "Security Research"]}
     </script>
-    <script type="application/ld+json">
+    <script async type="application/ld+json">
                 {
                     "@context": "http://schema.org",
                     "@type": "ItemList",
