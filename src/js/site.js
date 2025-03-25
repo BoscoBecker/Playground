@@ -428,3 +428,12 @@ function setTheme() {
     // Save the theme preference in localStorage
     localStorage.setItem('theme', isDark ? 'dark-theme' : '');
 }
+
+function applyStoredTheme() {
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+        document.body.className = storedTheme;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', applyStoredTheme);

@@ -49,93 +49,10 @@ $translations = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Use</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #1a1a1a;
-            color: #e4e4e4;
-            padding: 20px;
-        }
-
-        .tool-card {
-            background: #2d2d2d;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            border: 1px solid transparent;
-            background-clip: padding-box;
-            margin-bottom: 20px;
-            z-index: 1;
-        }
-
-        .tool-card::before {
-            content: '';
-            position: absolute;
-            top: -1px;
-            left: -1px;
-            right: -1px;
-            bottom: -1px;
-            border-radius: 10px;
-            padding: 1px;
-            background: linear-gradient(
-                60deg,
-                #3b82f6,
-                #8b5cf6,
-                #ec4899
-            );
-            -webkit-mask: 
-                linear-gradient(#fff 0 0) content-box, 
-                linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0.5;
-            transition: all 0.3s ease;
-            z-index: -1;
-        }
-
-        .tool-card:hover::before {
-            opacity: 1;
-            background: linear-gradient(
-                60deg,
-                #3b82f6,
-                #8b5cf6,
-                #ec4899,
-                #3b82f6
-            );
-            background-size: 200% 200%;
-            animation: gradient-animation 3s linear infinite;
-        }
-
-        @keyframes gradient-animation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .language-switch {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-
-        .btn-outline-primary {
-            border-color: #3b82f6;
-            color: #3b82f6;
-        }
-
-        .btn-outline-primary:hover {
-            background-color: #3b82f6;
-            color: #fff;
-        }
-    </style>
+    <link href="css/layout.css" rel="stylesheet">    
 </head>
 <body>
     <div class="container">
-        <div class="language-switch">
-            <a href="?lang=en" class="btn btn-sm <?php echo $lang == 'en' ? 'btn-primary' : 'btn-outline-primary'; ?>">EN</a>
-            <a href="?lang=pt" class="btn btn-sm <?php echo $lang == 'pt' ? 'btn-primary' : 'btn-outline-primary'; ?>">PT</a>
-        </div>
-
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="tool-card p-4">
@@ -151,7 +68,7 @@ $translations = [
             </div>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script async src="js/site.js"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
