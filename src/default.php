@@ -24,7 +24,8 @@
             'under_development' => 'New tool under development',
             'playground_title' => 'Playground 🎡 Just for Fun',
             'privacy_notice' => 'By using this tool, you agree to our Privacy Policy.',
-            'cookie_notice' => 'This wonderful website "Playground 🎡 Just for Fun" uses cookies to improve your experience. Enjoy 😎',
+            'cookie_notice' => 'This wonderful website "Playground 🎡 Just for Fun" uses cookies to improve your experience. 
+                                By using this tool, you agree to our Privacy Policy, so enjoy 😎',
             'accept' => 'Accept',
             'decline' => 'Decline',
             'entertainment_title' => 'Entertainment Hub',
@@ -56,7 +57,8 @@
             'under_development' => 'Nova ferramenta em desenvolvimento',
             'playground_title' => 'Playground 🎡 Apenas por Diversão',
             'privacy_notice' => 'Ao usar esta ferramenta, você concorda com nossa Política de Privacidade.',
-            'cookie_notice' => 'Este maravilhoso site "Playground 🎡 Apenas por Diversão" usa cookies para melhorar sua experiência. Aproveite 😎',
+            'cookie_notice' => 'Este maravilhoso site "Playground 🎡 Apenas por Diversão" usa cookies para melhorar sua experiência. 
+                                Ao usar esta ferramenta, você concorda com nossa Política de Privacidade então aproveite 😎',
             'accept' => 'Aceitar',
             'decline' => 'Recusar',
             'entertainment_title' => 'Central de Entretenimento',
@@ -125,6 +127,18 @@
  <meta name="twitter:card" content="summary_large_image">
  <meta name="twitter:title" content="Entertainment Hub - Stream Movies, TV Shows & Sports">
  <meta name="twitter:description" content="Access Netflix, Disney+, YouTube, and live sports streaming all in one place.">
+
+ <!-- SEO Meta Tags for AI Tools -->
+<meta name="description" content="Explore top AI tools including ChatGPT, DeepArt, Sesame, Grammarly, Canva, and invideo AI. Enhance your productivity with AI-powered solutions.">
+<meta name="keywords" content="AI tools, ChatGPT, DeepArt, Sesame, Grammarly, Canva, invideo AI, generative AI, AI productivity tools">
+<meta property="og:title" content="Top AI Tools - Enhance Your Productivity with AI">
+<meta property="og:description" content="Discover AI tools like ChatGPT, DeepArt, Sesame, Grammarly, Canva, and invideo AI. Boost your creativity and productivity with AI.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://boscobecker.fun/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Top AI Tools - Enhance Your Productivity with AI">
+<meta name="twitter:description" content="Explore AI tools like ChatGPT, DeepArt, Sesame, Grammarly, Canva, and invideo AI. Boost your creativity and productivity with AI.">
+
  <!-- Language Alternatives -->
  <link rel="alternate" hreflang="en" href="https://boscobecker.fun/?lang=en">
  <link rel="alternate" hreflang="pt" href="https://boscobecker.fun/?lang=pt">
@@ -140,6 +154,8 @@
     <div class="language-switch">
     <a href="?lang=en" class="btn btn-sm <?php echo $lang == 'en' ? 'btn-primary' : 'btn-outline-primary'; ?>">EN</a>
     <a href="?lang=pt" class="btn btn-sm <?php echo $lang == 'pt' ? 'btn-primary' : 'btn-outline-primary'; ?>">PT</a>
+    <button id="theme-toggle" class="btn btn-sm btn-outline-secondary" onclick="setTheme()"><i class="fas fa-moon"></i>
+    </button>
     </div>
     <br><br><br>
     <div class="row justify-content-center mb-5">
@@ -432,6 +448,72 @@
                 </div>                
             </div>
         </section>
+
+        <section id="ai-tools" class="mb-5">
+            <h2 class="mb-4"><?php echo $lang == 'pt' ? 'Melhores Ferramentas de IA' : 'Top AI Tools'; ?></h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="tool-card p-4">
+                       <img src="assets/chatgpt-logo.png" alt="chatgpt" class="img-fluid mb-3" style="height: 60px; object-fit: contain;">
+                        <h5>ChatGPT</h5>
+                        <p class="text-muted"><?php echo $lang == 'pt' ? 'Ferramenta de geração de texto' : 'Text generation tool'; ?></p>
+                        <a href="https://chat.openai.com" target="_blank" class="btn btn-primary w-100">
+                            <i class="fas fa-robot"></i> <?php echo $lang == 'pt' ? 'Visitar Agora' : 'Visit Now'; ?>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="tool-card p-4">
+                       <img src="assets/deeparteffects-logo.png" alt="deeparteffects" class="img-fluid mb-3" style="height: 60px; object-fit: contain;">
+                        <h5>DeepArt</h5>
+                        <p class="text-muted"><?php echo $lang == 'pt' ? 'Transforme fotos em arte' : 'Turn photos into art'; ?></p>
+                        <a href="https://www.deeparteffects.com/" target="_blank" class="btn btn-primary w-100">
+                            <i class="fas fa-paint-brush"></i> <?php echo $lang == 'pt' ? 'Visitar Agora' : 'Visit Now'; ?>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="tool-card p-4">
+                    <img src="assets/sesame-logo.png" alt="sesame" class="img-fluid mb-3" style="height: 60px; object-fit: contain;">
+                        <h5>Sesame</h5>
+                        <p class="text-muted"><?php echo $lang == 'pt' ? 'Demonstração de voz via conversa' : 'Conversational voice demo'; ?></p>
+                        <a href="https://www.sesame.com" target="_blank" class="btn btn-primary w-100">
+                            <i class="fas fa-shield-alt"></i> <?php echo $lang == 'pt' ? 'Visitar Agora' : 'Visit Now'; ?>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="tool-card p-4">
+                        <img src="assets/Grammarly-logo.png" alt="Grammarly" class="img-fluid mb-3" style="height: 60px; object-fit: contain;">
+                        <h5>Grammarly</h5>
+                        <p class="text-muted"><?php echo $lang == 'pt' ? 'Assistente de escrita' : 'Writing assistant'; ?></p>
+                        <a href="https://www.grammarly.com" target="_blank" class="btn btn-primary w-100">
+                            <i class="fas fa-spell-check"></i> <?php echo $lang == 'pt' ? 'Visitar Agora' : 'Visit Now'; ?>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="tool-card p-4">
+                        <img src="assets/Canva-logo.png" alt="Canva" class="img-fluid mb-3" style="height: 60px; object-fit: contain;">
+                        <h5>Canva</h5>
+                        <p class="text-muted"><?php echo $lang == 'pt' ? 'Ferramenta de design gráfico' : 'Graphic design tool'; ?></p>
+                        <a href="https://www.canva.com" target="_blank" class="btn btn-primary w-100">
+                            <i class="fas fa-palette"></i> <?php echo $lang == 'pt' ? 'Visitar Agora' : 'Visit Now'; ?>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="tool-card p-4">
+                        <img src="assets/invideoIA-logo.png" alt="invideoIA" class="img-fluid mb-3" style="height: 60px; object-fit: contain;"> 
+                        <h5>invideo AI</h5>
+                        <p class="text-muted"><?php echo $lang == 'pt' ? 'Gere videos com IA' : 'Generate video with IA'; ?></p>
+                        <a href="https://invideo.io/pt/criar/ai-video-generator/" target="_blank" class="btn btn-primary w-100">
+                            <i class="fas fa-video"></i> <?php echo $lang == 'pt' ? 'Visitar Agora' : 'Visit Now'; ?>
+                        </a>
+                    </div>
+                </div>                
+            </div>
+        </section>
         <section id="projects" class="mb-5">
             <h2 class="mb-4"><?php echo $translations[$lang]['projects_title']; ?></h2>
             <div id="github-projects" class="row g-4">
@@ -633,7 +715,7 @@
 </section>
 </section>
     </div>
-    <footer class="text-center py-4" style="background: #2c2c2c;   margin-left: 0 !important;">
+    <footer class="text-center py-4" style="margin-left: 0 !important;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
@@ -716,7 +798,7 @@
                         <p class="mb-0"><?php echo $translations[$lang]['cookie_notice']; ?></p>
                     </div>
                     <div class="col-md-4 text-end">
-                        <button class="btn btn-primary" onclick="acceptCookies()"><?php echo $translations[$lang]['accept']; ?></button><br>                        
+                        <button class="btn btn-primary" onclick="acceptCookies()"><?php echo $translations[$lang]['accept']; ?></button>                        
                         <button class="btn btn-outline-secondary" onclick="declineCookies()"><?php echo $translations[$lang]['decline']; ?></button>
                     </div>
                 </div>
@@ -725,4 +807,7 @@
     </div>
 </body>       
 </html>
+
+
+
 

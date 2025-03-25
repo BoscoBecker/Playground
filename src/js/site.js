@@ -1,7 +1,8 @@
-let currentlyPlaying = null;
 
-// Função para controlar a reprodução de áudio
-function toggleAudio(button) {
+let currentlyPlaying = null;
+    
+    // Function to control audio playback
+    function toggleAudio(button) {
     const audioPlayer = document.getElementById('audioPlayer');
     const url = button.dataset.url;
     const buttons = document.querySelectorAll('.play-button');
@@ -23,7 +24,7 @@ function toggleAudio(button) {
     audioPlayer.src = url;
     audioPlayer.play().catch(error => {
         console.error('Autoplay was prevented:', error);
-        alert('Por favor, toque no botão novamente para reproduzir o áudio.');
+        alert('Please press the button again to play the audio.');
     });
     button.classList.add('active');
     button.innerHTML = '<i class="fas fa-stop"></i>';
@@ -33,7 +34,7 @@ function toggleAudio(button) {
     audioPlayer.onended = () => resetAudioState(button);
 }
 
-// Função para resetar o estado do áudio
+// Function to reset audio state
 function resetAudioState(button) {
     button.classList.remove('active');
     button.innerHTML = '<i class="fas fa-play"></i>';
@@ -41,7 +42,7 @@ function resetAudioState(button) {
     currentlyPlaying = null;
 }
 
-// Função para gerar CPF
+// Function to generate CPF
 function generateCPF() {
     let numbers = Array.from({ length: 9 }, () => Math.floor(Math.random() * 10)).join('');
     numbers += calculateDigit(numbers, 10);
@@ -49,7 +50,7 @@ function generateCPF() {
     document.getElementById('cpf-output').value = formatCPF(numbers);
 }
 
-// Função para gerar CNPJ
+// Function to generate CNPJ
 function generateCNPJ() {
     let numbers = Array.from({ length: 12 }, () => Math.floor(Math.random() * 10)).join('');
     numbers += calculateDigit(numbers, 5);
@@ -57,24 +58,24 @@ function generateCNPJ() {
     document.getElementById('cnpj-output').value = formatCNPJ(numbers);
 }
 
-// Função para calcular dígitos verificadores
+// Function to calculate check digits
 function calculateDigit(numbers, startWeight) {
     let sum = numbers.split('').reduce((acc, num, index) => acc + num * (startWeight - index), 0);
     let digit = 11 - (sum % 11);
     return digit > 9 ? 0 : digit;
 }
 
-// Função para formatar CPF
+// Function to format CPF
 function formatCPF(cpf) {
     return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
 }
 
-// Função para formatar CNPJ
+// Function to format CNPJ
 function formatCNPJ(cnpj) {
     return cnpj.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
 }
 
-// Função para gerar senha
+// Function to generate password
 function generatePassword() {
     const length = 16;
     const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
@@ -84,7 +85,7 @@ function generatePassword() {
     document.getElementById('password-output').value = password;
 }
 
-// Função para copiar texto para a área de transferência
+// Function to copy text to clipboard
 async function copyToClipboard(elementId) {
     const element = document.getElementById(elementId);
     const text = element.value;
@@ -93,7 +94,7 @@ async function copyToClipboard(elementId) {
             await navigator.clipboard.writeText(text);
             showTemporaryMessage(element, 'Copied!');
         } else {
-            // Fallback para dispositivos que não suportam a API de clipboard
+            // Fallback for devices that do not support the clipboard API
             const tempInput = document.createElement('input');
             tempInput.value = text;
             document.body.appendChild(tempInput);
@@ -107,14 +108,14 @@ async function copyToClipboard(elementId) {
     }
 }
 
-// Função para mostrar uma mensagem temporária
+// Function to show a temporary message
 function showTemporaryMessage(element, message, duration = 1000) {
     const originalValue = element.value;
     element.value = message;
     setTimeout(() => (element.value = originalValue), duration);
 }
 
-// Função para gerar número de telefone
+// Function to generate phone number
 function generatePhone() {
     const ddd = document.getElementById('phone-state').value;
     const isMobile = Math.random() < 0.8;
@@ -124,25 +125,34 @@ function generatePhone() {
     document.getElementById('phone-output').value = formattedPhone;
 }
 
-// Função para abrir o WhatsApp
-function openWhatsApp() {
-    const number = document.getElementById('whatsapp-number').value.replace(/\D/g, '');
-    if (number) {
-        window.open(`https://wa.me/${encodeURIComponent(number)}`, '_blank');
-    } else {
-        alert('Por favor, insira um número válido do WhatsApp.');
-    }
-}
-
-// Função para abrir o YouTube
-function openYouTube(event) {
-    event.preventDefault();
-    const searchQuery = document.getElementById('youtube-search').value.trim();
-    const url = searchQuery ? `https://youtube.com/results?search_query=${encodeURIComponent(searchQuery)}` : 'https://youtube.com';
+// Function to open WhatsApp
+// Function to open external links safely
+function openExternalLink(url) {
     window.open(url, '_blank');
 }
 
-// Função para gerar QR Code
+// Example usage in your existing functions
+function openWhatsApp() {
+    const number = document.getElementById('whatsapp-number').value.replace(/\D/g, '');
+    if (number) {
+        openExternalLink(`https://wa.me/${encodeURIComponent(number)}`);
+    } else {
+        alert('Please enter a valid WhatsApp number.');
+    }
+}
+
+function openYouTube(event) {
+    if (!validateInput('youtube-search')) {
+        event.preventDefault();
+        return;
+    }
+    event.preventDefault();
+    const searchQuery = document.getElementById('youtube-search').value.trim();
+    const url = searchQuery ? `https://youtube.com/results?search_query=${encodeURIComponent(searchQuery)}` : 'https://youtube.com';
+    openExternalLink(url);
+}
+
+// Function to generate QR Code
 function generateQR() {
     const type = document.getElementById('qrType').value;
     const qrResult = document.getElementById('qrResult');
@@ -153,7 +163,7 @@ function generateQR() {
             const ssid = document.getElementById('ssid').value;
             const password = document.getElementById('wifiPassword').value;
             if (!ssid || !password) {
-                qrResult.innerHTML = '<p class="text-danger">Por favor, preencha todos os campos</p>';
+                qrResult.innerHTML = '<p class="text-danger">Please fill out all fields</p>';
                 return;
             }
             data = `WIFI:S:${ssid};T:WPA;P:${password};;`;
@@ -161,7 +171,7 @@ function generateQR() {
         case 'tel':
             const tel = document.getElementById('tel').value;
             if (!tel) {
-                qrResult.innerHTML = '<p class="text-danger">Por favor, insira um número de telefone</p>';
+                qrResult.innerHTML = '<p class="text-danger">Please enter a phone number</p>';
                 return;
             }
             data = `tel:${tel}`;
@@ -169,7 +179,7 @@ function generateQR() {
         default:
             data = document.getElementById('text').value;
             if (!data) {
-                qrResult.innerHTML = '<p class="text-danger">Por favor, insira um texto ou URL</p>';
+                qrResult.innerHTML = '<p class="text-danger">Please enter text or URL</p>';
                 return;
             }
     }
@@ -183,8 +193,8 @@ function generateQR() {
     img.onerror = () => {
         qrResult.innerHTML = `
             <div class="alert alert-warning">
-                <i class="fas fa-exclamation-triangle"></i> Não foi possível gerar o QR code
-                <button class="btn btn-sm btn-primary mt-2" onclick="generateQR()">Tentar novamente</button>
+                <i class="fas fa-exclamation-triangle"></i> Unable to generate QR code
+                <button class="btn btn-sm btn-primary mt-2" onclick="generateQR()">Try again</button>
             </div>`;
     };
 
@@ -221,7 +231,7 @@ function generateQR() {
     img.src = qrUrl;
 }
 
-// Função para atualizar os campos de entrada do QR Code
+// Function to update QR Code input fields
 function updateQRInputs() {
     const container = document.getElementById('qrInputs');
     const type = document.getElementById('qrType').value;
@@ -230,28 +240,30 @@ function updateQRInputs() {
     switch(type) {
         case 'wifi':
             html = `
-                <input type="text" class="form-control mb-2" id="ssid" placeholder="SSID (Nome da Rede)">
-                <input type="password" class="form-control mb-2" id="wifiPassword" placeholder="Senha">
+                <input type="text" class="form-control mb-2" id="ssid" placeholder="SSID (Network Name)">
+                <input type="password" class="form-control mb-2" id="wifiPassword" placeholder="Password">
             `;
             break;
         case 'tel':
-            html = `<input type="tel" class="form-control mb-2" id="tel" placeholder="Número de Telefone">`;
+            html = `<input type="tel" class="form-control mb-2" id="tel" placeholder="Phone Number">`;
             break;
         default:
-            html = `<input type="text" class="form-control mb-2" id="text" placeholder="Texto ou URL">`;
+            html = `<input type="text" class="form-control mb-2" id="text" placeholder="Text or URL">`;
     }
 
     container.innerHTML = html;
 }
 
-// Função para buscar empregos no LinkedIn
+// Function to search jobs on LinkedIn
 function searchLinkedInJobs() {
+    if (!validateInput('jobSearch')) return;    
     const query = document.getElementById('jobSearch').value;
     window.open(`https://www.linkedin.com/jobs/search/?keywords=${encodeURIComponent(query)}`, '_blank');
 }
 
-// Função para buscar produtos em marketplaces
+// Function to search products in marketplaces
 function searchProduct() {
+    if (!validateInput('productSearch')) return;
     const marketplace = document.getElementById('marketplace').value;
     const query = encodeURIComponent(document.getElementById('productSearch').value);
     let url;
@@ -277,14 +289,30 @@ function searchProduct() {
     window.open(url, '_blank');
 }
 
-// Inicialização ao carregar a página
+
+// Initialization on page load
 window.onload = function() {
-    ['generateCPF', 'generateCNPJ', 'generatePassword', 'generatePhone'].forEach(fn => window[fn]());
+    // Initialize generators
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Check localStorage for theme preference on page load
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        body.classList.add(savedTheme);
+        themeToggle.innerHTML = `<i class="fas fa-${savedTheme === 'dark-theme' ? 'sun' : 'moon'}"></i>`;
+    }
+
+    generateCPF();
+    generateCNPJ();
+    generatePassword();
+    generatePhone();
+
     if (typeof(Storage) !== "undefined" && !localStorage.getItem('cookieConsent')) {
         document.getElementById('cookie-consent').style.display = 'block';
     }
 
-    // Adiciona suporte para eventos de toque
+    // Add support for touch events
     document.querySelectorAll('.btn').forEach(button => {
         button.addEventListener('touchstart', function(e) {
             e.preventDefault();
@@ -292,7 +320,7 @@ window.onload = function() {
         }, { passive: false });
     });
 
-    // Inicializa os campos de entrada do QR Code
+    // Initialize QR Code input fields
     const qrType = document.getElementById('qrType');
     if (qrType) {
         qrType.addEventListener('change', updateQRInputs);
@@ -312,9 +340,10 @@ window.onload = function() {
         declineBtn.addEventListener('click', declineCookies);
     }
 
+    
 };
 
-// Função para lidar com o consentimento de cookies
+// Function to handle cookie consent
 function handleCookies(consent) {
     if (typeof(Storage) !== "undefined") {
         localStorage.setItem('cookieConsent', consent ? 'accepted' : 'declined');
@@ -323,12 +352,11 @@ function handleCookies(consent) {
 }
 
 function acceptCookies() {
-    handleCookies(true); // Aceita os cookies
+    handleCookies(true); // Accept cookies
 }
 
-
 function declineCookies() {
-    handleCookies(false); // Recusa os cookies
+    handleCookies(false); // Decline cookies
 }
 
 // Function to check public IP
@@ -362,17 +390,41 @@ function checkPublicIP() {
             ipDiv.innerHTML = `
                 <h3 class="mb-3">${ip}</h3>
                 <button class="btn btn-primary" onclick="checkPublicIP()">
-                    <i class="fas fa-sync-alt"></i> Atualizar
+                    <i class="fas fa-sync-alt"></i> Refresh
                 </button>`;
         })
         .catch(() => {
             ipDiv.innerHTML = `
                 <div class="alert alert-warning mb-3">
-                    <i class="fas fa-exclamation-triangle"></i> Não foi possível obter o IP
+                    <i class="fas fa-exclamation-triangle"></i> Unable to obtain IP
                 </div>
                 <button class="btn btn-primary" onclick="checkPublicIP()">
-                    <i class="fas fa-sync-alt"></i> Tentar Novamente
+                    <i class="fas fa-sync-alt"></i> Try Again
                 </button>`;
         });
 }
 
+function validateInput(inputId) {
+    const inputElement = document.getElementById(inputId);
+    if (inputElement.value.trim() === '') {
+        alert('Please fill out the search field.');
+        return false;
+    }
+    return true;
+}
+
+
+function setTheme() {
+    const body = document.body;
+    const themeToggle = document.getElementById('theme-toggle');
+
+    // Toggle the dark-theme class on the body
+    body.classList.toggle('dark-theme');
+    const isDark = body.classList.contains('dark-theme');
+
+    // Update the theme toggle button icon
+    themeToggle.innerHTML = `<i class="fas fa-${isDark ? 'sun' : 'moon'}"></i>`;
+
+    // Save the theme preference in localStorage
+    localStorage.setItem('theme', isDark ? 'dark-theme' : '');
+}
