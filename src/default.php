@@ -26,8 +26,8 @@
             'privacy_notice' => 'By using this tool, you agree to our Privacy Policy.',
             'cookie_notice' => 'This wonderful website "Playground 🎡 Just for Fun" uses cookies to improve your experience. 
                                 By using this tool, you agree to our Privacy Policy, so enjoy 😎',
-            'accept' => 'Accept',
-            'decline' => 'Decline',
+            'granted' => 'Accept',
+            'denied' => 'Decline',
             'entertainment_title' => 'Entertainment Hub',
             'entertainment_description' => 'Your favorite streaming and sports content',
             'watch_now' => 'Watch Now',
@@ -49,7 +49,7 @@
             'tools_password' => 'Gerador de Senha',
             'projects_title' => 'Projetos GitHub',
             'generate' => 'Gerar',
-            'copy' => 'Copiar',
+            'copy' => 'Copiar', 
             'tools_whatsapp' => 'WhatsApp Direto',
             'whatsapp_placeholder' => 'Digite o número com DDD',
             'tools_phone' => 'Gerador de Telefone'  ,
@@ -59,8 +59,8 @@
             'privacy_notice' => 'Ao usar esta ferramenta, você concorda com nossa Política de Privacidade.',
             'cookie_notice' => 'Este maravilhoso site "Playground 🎡 Apenas por Diversão" usa cookies para melhorar sua experiência. 
                                 Ao usar esta ferramenta, você concorda com nossa Política de Privacidade então aproveite 😎',
-            'accept' => 'Aceitar',
-            'decline' => 'Recusar',
+            'granted' => 'Aceitar',
+            'denied' => 'Recusar',
             'entertainment_title' => 'Central de Entretenimento',
             'entertainment_description' => 'Seu conteúdo favorito de streaming e esportes',
             'watch_now' => 'Assistir Agora',
@@ -73,10 +73,18 @@
  <!DOCTYPE html>
  <html lang="<?php echo $lang; ?>">
  <head>
+<!-- Google Tag Manager -->
+ <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TWMFVZ7J');
+ </script>  
  <!-- Google AdSense -->
- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1221014883643198" crossorigin="anonymous"></script>    
+ <script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1221014883643198" crossorigin="anonymous"></script>    
  <!-- Google tag (gtag.js) -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-LBCKW5PL4L"></script>
+ <script src="https://www.googletagmanager.com/gtag/js?id=G-LBCKW5PL4L"></script>
  <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -112,7 +120,6 @@
  <meta property="og:title" content="Entertainment Hub - Stream Movies, TV Shows & Sports">
  <meta property="og:description" content="Your one-stop destination for streaming entertainment. Watch Netflix, Disney+, YouTube, and live sports.">
  <meta property="og:type" content="website">    
-
  <!-- SEO Meta Tags for AI Tools -->
 <meta name="description" content="Explore top AI tools including ChatGPT, DeepArt, Sesame, Grammarly, Canva, and invideo AI. Enhance your productivity with AI-powered solutions.">
 <meta name="keywords" content="AI tools, ChatGPT, DeepArt, Sesame, Grammarly, Canva, invideo AI, generative AI, AI productivity tools">
@@ -120,7 +127,6 @@
 <meta property="og:description" content="Discover AI tools like ChatGPT, DeepArt, Sesame, Grammarly, Canva, and invideo AI. Boost your creativity and productivity with AI.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://boscobecker.fun/">
-
  <!-- Language Alternatives -->
  <link rel="alternate" hreflang="en" href="https://boscobecker.fun/?lang=en">
  <link rel="alternate" hreflang="pt" href="https://boscobecker.fun/?lang=pt">
@@ -131,7 +137,11 @@
 <link rel="stylesheet" href="css/layout.css">     
 </head>
 <body>
-    <a href="https://wa.me/41996694916?text=Oi"  class="whatsapp-float"  target="_blank"><i class="fab fa-whatsapp"></i></a>        
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TWMFVZ7J"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+     <a href="https://wa.me/41996694916?text=Oi"  class="whatsapp-float"  target="_blank"><i class="fab fa-whatsapp"></i></a>        
     <div class="main-content">
     <div class="language-switch">
     <a href="?lang=en" class="btn btn-sm <?php echo $lang == 'en' ? 'btn-primary' : 'btn-outline-primary'; ?>">EN</a>
@@ -155,14 +165,7 @@
         </h1>
     </div>
 </div>
-<style>
-@keyframes titleGradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-</style>
-    <section id="tools" class="mb-5">
+   <section id="tools" class="mb-5">
             <h2 class="mb-4"><?php echo $translations[$lang]['menu_tools']; ?></h2>
             <div class="row g-4">
                 <div class="col-md-4">
@@ -430,7 +433,6 @@
                 </div>                
             </div>
         </section>
-
         <section id="ai-tools" class="mb-5">
             <h2 class="mb-4"><?php echo $lang == 'pt' ? 'Melhores Ferramentas de IA' : 'Top AI Tools'; ?></h2>
             <div class="row g-4">
@@ -710,9 +712,24 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer>    
+    <div id="cookie-consent" class="position-fixed bottom-0 start-0 w-100 p-3" style="display: none; z-index: 1000;">
+        <div class="container">
+            <div class="tool-card p-4">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <p class="mb-0"><?php echo $translations[$lang]['cookie_notice']; ?></p>
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <button class="btn btn-primary" onclick="acceptCookies()"><?php echo $translations[$lang]['granted']; ?></button>                        
+                        <button class="btn btn-outline-secondary" onclick="declineCookies()"><?php echo $translations[$lang]['denied']; ?></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/site.js"></script>
     <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script async src="js/site.js"></script>
     <script async type="application/ld+json">
                 {"@context": "http://schema.org",
                     "@type": "Person",
@@ -770,22 +787,7 @@
                         }
                     ]
                 }
-    </script>
-    <div id="cookie-consent" class="position-fixed bottom-0 start-0 w-100 p-3" style="display: none; z-index: 1000;">
-        <div class="container">
-            <div class="tool-card p-4">
-                <div class="row align-items-center">
-                    <div class="col-md-8">
-                        <p class="mb-0"><?php echo $translations[$lang]['cookie_notice']; ?></p>
-                    </div>
-                    <div class="col-md-4 text-end">
-                        <button class="btn btn-primary" onclick="acceptCookies()"><?php echo $translations[$lang]['accept']; ?></button>                        
-                        <button class="btn btn-outline-secondary" onclick="declineCookies()"><?php echo $translations[$lang]['decline']; ?></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </script>   
 </body>       
 </html>
 

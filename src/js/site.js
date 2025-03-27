@@ -346,9 +346,15 @@ window.onload = function() {
 // Function to handle cookie consent
 function handleCookies(consent) {
     if (typeof(Storage) !== "undefined") {
-        localStorage.setItem('cookieConsent', consent ? 'accepted' : 'declined');
+        localStorage.setItem('cookieConsent', consent ? 'granted' : 'denied');
     }
     document.getElementById('cookie-consent').style.display = 'none';
+
+    // Update Google Analytics consent based on user choice
+    gtag('consent', 'update', {
+        'ad_storage': consent ? 'granted' : 'denied',
+        'analytics_storage': consent ? 'granted' : 'denied'
+    });
 }
 
 function acceptCookies() {
